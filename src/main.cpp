@@ -191,7 +191,7 @@ int main_system(std::vector<cv::String> cv_all_img_names) {
       det.Run(srcimg, boxes, &det_times);
     
       cv::Mat crop_img;
-      for (int j = 0; j < boxes.size(); j++) {
+      for (int j = boxes.size() - 1; j >= 0; j--) {
         crop_img = Utility::GetRotateCropImage(srcimg, boxes[j]);
 
         if (cls != nullptr) {

@@ -82,6 +82,7 @@ void CRNNRecognizer::Run(cv::Mat &img, std::vector<double> *times) {
   for (int i = 0; i < str_res.size(); i++) {
     std::cout << str_res[i];
   }
+  std::cout << "\n";
   /*std::cout << "\tscore: " << score << std::endl;*/
 
   std::chrono::duration<float> preprocess_diff = preprocess_end - preprocess_start;
