@@ -80,7 +80,7 @@ void Utility::GetAllFiles(const char *dir_name,
       std::cout << "Can not open dir " << dir_name << std::endl;
       return;
     }
-    std::cout << "Successfully opened the dir !" << std::endl;
+    /*std::cout << "Successfully opened the dir !" << std::endl*/
     while ((filename = readdir(dir)) != NULL) {
       if (strcmp(filename->d_name, ".") == 0 ||
           strcmp(filename->d_name, "..") == 0)

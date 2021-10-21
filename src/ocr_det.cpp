@@ -88,10 +88,10 @@ void DBDetector::LoadModel(const std::string &model_dir) {
   // true for multiple input
   config.SwitchSpecifyInputNames(true);
 
-  config.SwitchIrOptim(true);
+  config.SwitchIrOptim(false);
 
   config.EnableMemoryOptim();
-  // config.DisableGlogInfo();
+  config.DisableGlogInfo();
 
   this->predictor_ = CreatePredictor(config);
 }
@@ -166,7 +166,7 @@ void DBDetector::Run(cv::Mat &img,
 
   boxes = post_processor_.FilterTagDetRes(boxes, ratio_h, ratio_w, srcimg);
   auto postprocess_end = std::chrono::steady_clock::now();
-  std::cout << "Detected boxes num: " << boxes.size() << endl;
+  /*std::cout << "Detected boxes num: " << boxes.size() << endl;*/
 
   std::chrono::duration<float> preprocess_diff = preprocess_end - preprocess_start;
   times->push_back(double(preprocess_diff.count() * 1000));

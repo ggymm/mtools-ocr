@@ -91,7 +91,7 @@ int main_det(std::vector<cv::String> cv_all_img_names) {
                    FLAGS_use_tensorrt, FLAGS_precision);
     
     for (int i = 0; i < cv_all_img_names.size(); ++i) {
-      LOG(INFO) << "The predict img: " << cv_all_img_names[i];
+      /*LOG(INFO) << "The predict img: " << cv_all_img_names[i];*/
 
       cv::Mat srcimg = cv::imread(cv_all_img_names[i], cv::IMREAD_COLOR);
       if (!srcimg.data) {
@@ -133,7 +133,7 @@ int main_rec(std::vector<cv::String> cv_all_img_names) {
                        FLAGS_use_tensorrt, FLAGS_precision);
 
     for (int i = 0; i < cv_all_img_names.size(); ++i) {
-      LOG(INFO) << "The predict img: " << cv_all_img_names[i];
+      /*LOG(INFO) << "The predict img: " << cv_all_img_names[i];*/
 
       cv::Mat srcimg = cv::imread(cv_all_img_names[i], cv::IMREAD_COLOR);
       if (!srcimg.data) {
@@ -177,7 +177,7 @@ int main_system(std::vector<cv::String> cv_all_img_names) {
     auto start = std::chrono::system_clock::now();
 
     for (int i = 0; i < cv_all_img_names.size(); ++i) {
-      LOG(INFO) << "The predict img: " << cv_all_img_names[i];
+      /*LOG(INFO) << "The predict img: " << cv_all_img_names[i];*/
 
       cv::Mat srcimg = cv::imread(cv_all_img_names[i], cv::IMREAD_COLOR);
       if (!srcimg.data) {
@@ -203,11 +203,11 @@ int main_system(std::vector<cv::String> cv_all_img_names) {
       auto end = std::chrono::system_clock::now();
       auto duration =
           std::chrono::duration_cast<std::chrono::microseconds>(end - start);
-      std::cout << "Cost  "
+      /*std::cout << "Cost  "
                 << double(duration.count()) *
                        std::chrono::microseconds::period::num /
                        std::chrono::microseconds::period::den
-                << "s" << std::endl;
+                << "s" << std::endl;*/
     }
       
     return 0;
@@ -255,7 +255,7 @@ int main(int argc, char **argv) {
         std::cout << "Please choose one mode of [det, rec, system] !" << std::endl;
         return -1;
     }
-    std::cout << "mode: " << argv[1] << endl;
+    /*std::cout << "mode: " << argv[1] << endl;*/
 
     // Parsing command-line
     google::ParseCommandLineFlags(&argc, &argv, true);
@@ -268,7 +268,7 @@ int main(int argc, char **argv) {
     
     std::vector<cv::String> cv_all_img_names;
     cv::glob(FLAGS_image_dir, cv_all_img_names);
-    std::cout << "total images num: " << cv_all_img_names.size() << endl;
+    /*std::cout << "total images num: " << cv_all_img_names.size() << endl;*/
     
     if (strcmp(argv[1], "det")==0) {
         return main_det(cv_all_img_names);

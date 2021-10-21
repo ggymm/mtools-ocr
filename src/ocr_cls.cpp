@@ -102,7 +102,7 @@ void Classifier::LoadModel(const std::string &model_dir) {
   // true for multiple input
   config.SwitchSpecifyInputNames(true);
 
-  config.SwitchIrOptim(true);
+  config.SwitchIrOptim(false);
 
   config.EnableMemoryOptim();
   config.DisableGlogInfo();

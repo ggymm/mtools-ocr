@@ -82,7 +82,7 @@ void CRNNRecognizer::Run(cv::Mat &img, std::vector<double> *times) {
   for (int i = 0; i < str_res.size(); i++) {
     std::cout << str_res[i];
   }
-  std::cout << "\tscore: " << score << std::endl;
+  /*std::cout << "\tscore: " << score << std::endl;*/
 
   std::chrono::duration<float> preprocess_diff = preprocess_end - preprocess_start;
   times->push_back(double(preprocess_diff.count() * 1000));
@@ -136,7 +136,7 @@ void CRNNRecognizer::LoadModel(const std::string &model_dir) {
   // true for multiple input
   config.SwitchSpecifyInputNames(true);
 
-  config.SwitchIrOptim(true);
+  config.SwitchIrOptim(false);
 
   config.EnableMemoryOptim();
   config.DisableGlogInfo();
