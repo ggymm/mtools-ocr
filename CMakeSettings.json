@@ -18,7 +18,7 @@
         },
         {
           "name": "OpenCV_DIR",
-          "value": "C:/SDK/opencv",
+          "value": "C:/SDK/opencv/build",
           "type": "PATH"
         },
         {

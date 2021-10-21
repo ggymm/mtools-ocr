@@ -1,0 +1,1 @@
+ppocr.exe system --image_dir=test.png
